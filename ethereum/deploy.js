@@ -13,12 +13,12 @@ const deploy = async () => {
 		.send({ from: accounts[0], gas: '2000000' });
 	console.log('Contract deployed to', result.options.address);
 };
-// deploy();
+deploy();
 
-async function test() {
-	addr = '0x071086a6cce3cdc206e37228abfb377e7488b85a';
-	let campaignF = new web3.eth.Contract(compiledFactory.abi, addr);
-	const campaigns = await campaignF.methods.getDeployedCampaigns().call();
-	console.log(campaigns);
-}
-test();
+// async function test() {
+// 	let addr = '0x071086a6cce3cdc206e37228abfb377e7488b85a';
+// 	let campaignF = new web3.eth.Contract(compiledFactory.abi, addr);
+// 	const campaigns = await campaignF.methods.getDeployedCampaigns().call();
+// 	console.log(campaigns);
+// }
+// test();
