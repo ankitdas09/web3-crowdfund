@@ -26,7 +26,7 @@ This project was developed using the following technologies.
 
 ## Getting Started
 
-Follow the following steps to setup this project on your own machine.
+Follow the following steps to set up this project on your machine.
 
 ### Prerequisites
 
@@ -72,7 +72,7 @@ _Steps to setup the development environment_
    ```sh
    node ethereum/compile.js
    ```
-5. Deploy the CampaignFactory campaign
+5. Deploy the CampaignFactory contract
    ```sh
    node ethereum/deploy.js
    ```
