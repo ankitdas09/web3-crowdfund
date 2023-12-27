@@ -3,11 +3,11 @@ import factory from '../ethereum/factory';
 import { Button, Card, Container } from 'semantic-ui-react';
 import Link from 'next/link';
 
-type Items = { header: string; description: ReactElement; fluid: boolean };
+type CardGroupItem = { header: string; description: ReactElement; fluid: boolean };
 type Campaign = string;
 
 type Props = {
-	campaigns: [Campaign];
+	campaigns: Campaign[];
 };
 
 const Index = (props: Props) => {
@@ -17,13 +17,13 @@ const Index = (props: Props) => {
 			<Link href={'/campaigns/new'}>
 				<Button content="Create Campaign" icon="add" primary floated="right" />
 			</Link>
-			<Card.Group items={makeCardProps(props.campaigns)} />
+			<Card.Group items={makeCardGroup(props.campaigns)} />
 		</>
 	);
 };
 
-function makeCardProps(campaigns: [Campaign]): [Items?] {
-	let items: [Items?] = [];
+function makeCardGroup(campaigns: Campaign[]): CardGroupItem[] {
+	let items: CardGroupItem[] = [];
 	campaigns.forEach((c) => {
 		items.push({
 			header: c,

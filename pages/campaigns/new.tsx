@@ -19,6 +19,7 @@ const NewCampaign = () => {
 			const accounts: [string?] = await web3.eth.getAccounts();
 			if (!accounts.length) {
 				init();
+				setLoading(false);
 				return;
 			}
 			await factory.methods.createCampaign(amt).send({ from: accounts[0] });
