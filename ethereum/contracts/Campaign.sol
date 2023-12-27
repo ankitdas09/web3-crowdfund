@@ -82,4 +82,12 @@ contract Campaign {
 	function getSummary() public view returns (uint, uint, uint, uint, address) {
 		return (minAmt, address(this).balance, numRequests, totalContributors, manager);
 	}
+
+	function getRequestCount() public view returns (uint) {
+		return numRequests;
+	}
+
+	function isAlreadyVoted(uint requestId) public view returns (bool) {
+		return requests[requestId].voters[msg.sender];
+	}
 }
