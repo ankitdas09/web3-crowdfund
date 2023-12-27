@@ -2,9 +2,10 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import Campaign from '../../../ethereum/campaign';
 import { NextPageContext } from 'next';
-import { Card, Grid } from 'semantic-ui-react';
+import { Button, Card, Grid } from 'semantic-ui-react';
 import web3 from '../../../ethereum/web3';
 import ContributeForm from '../../../components/contribute-form';
+import Link from 'next/link';
 
 type Props = {
 	minAmt: number;
@@ -34,12 +35,21 @@ const CampaignShow = (props: Props) => {
 	return (
 		<div>
 			<Grid>
-				<Grid.Column width={10}>
-					<Card.Group items={makeCardGroup(props)} />
-				</Grid.Column>
-				<Grid.Column width={6}>
-					<ContributeForm />
-				</Grid.Column>
+				<Grid.Row>
+					<Grid.Column width={10}>
+						<Card.Group items={makeCardGroup(props)} />
+					</Grid.Column>
+					<Grid.Column width={6}>
+						<ContributeForm />
+					</Grid.Column>
+				</Grid.Row>
+				<Grid.Row>
+					<Grid.Column>
+						<Link href={`/campaigns/${router.query.address}/requests`}>
+							<Button primary>View Requests</Button>
+						</Link>
+					</Grid.Column>
+				</Grid.Row>
 			</Grid>
 		</div>
 	);
@@ -79,19 +89,30 @@ function makeCardGroup(props: Props): CardGroupItem[] {
 	return items;
 }
 
-export async function getServerSideProps(context: NextPageContext): Promise<{ props: Props }> {
+export async function getServerSideProps(
+	context: NextPageContext,
+): Promise<{ props?: Props; redirect?: any }> {
 	const { address } = context.query;
-	const campaign = Campaign(address);
-	const summary: ContractSummaryResponse = await campaign.methods.getSummary().call();
-	return {
-		props: {
-			minAmt: Number(summary[0]),
-			balance: Number(summary[1]),
-			numRequest: Number(summary[2]),
-			totalContributors: Number(summary[3]),
-			manager: summary[4],
-		},
-	};
+	try {
+		const campaign = Campaign(address);
+		const summary: ContractSummaryResponse = await campaign.methods.getSummary().call();
+		return {
+			props: {
+				minAmt: Number(summary[0]),
+				balance: Number(summary[1]),
+				numRequest: Number(summary[2]),
+				totalContributors: Number(summary[3]),
+				manager: summary[4],
+			},
+		};
+	} catch (error) {
+		return {
+			redirect: {
+				destination: '/',
+				permanent: false,
+			},
+		};
+	}
 }
 
 export default CampaignShow;

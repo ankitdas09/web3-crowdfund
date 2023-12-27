@@ -74,6 +74,7 @@ contract Campaign {
 		Request storage request = requests[index];
 		require(!request.completed);
 		require(request.approvals > (totalContributors / 2));
+		require(request.amt <= address(this).balance);
 		request.receipient.transfer(request.amt);
 		request.completed = true;
 	}
