@@ -2,8 +2,9 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import Campaign from '../../../ethereum/campaign';
 import { NextPageContext } from 'next';
-import { Card } from 'semantic-ui-react';
+import { Card, Grid } from 'semantic-ui-react';
 import web3 from '../../../ethereum/web3';
+import ContributeForm from '../../../components/contribute-form';
 
 type Props = {
 	minAmt: number;
@@ -32,7 +33,14 @@ const CampaignShow = (props: Props) => {
 	const router = useRouter();
 	return (
 		<div>
-			<Card.Group items={makeCardGroup(props)} />
+			<Grid>
+				<Grid.Column width={10}>
+					<Card.Group items={makeCardGroup(props)} />
+				</Grid.Column>
+				<Grid.Column width={6}>
+					<ContributeForm />
+				</Grid.Column>
+			</Grid>
 		</div>
 	);
 };

@@ -44,8 +44,11 @@ contract Campaign {
 
 	function contribute() public payable {
 		require(msg.value >= minAmt);
+		bool prev = contributors[msg.sender];
 		contributors[msg.sender] = true;
-		totalContributors++;
+		if (!prev) {
+			totalContributors++;
+		}
 	}
 
 	function createRequest(
