@@ -1,19 +1,22 @@
+import Link from 'next/link';
 import React from 'react';
 import { Menu } from 'semantic-ui-react';
 
 const Header = () => {
 	return (
 		<Menu style={{ marginTop: '12px' }}>
-			<Menu.Item>Web3CrowdFund</Menu.Item>
+			<Link href={'/'}>
+				<Menu.Item>Web3CrowdFund</Menu.Item>
+			</Link>
 
 			<Menu.Menu position="right">
-				<Menu.Item name="signup" onClick={() => {}}>
-					Campaigns
-				</Menu.Item>
+				<Link href={'/'}>
+					<Menu.Item name="Campaigns">Campaigns</Menu.Item>
+				</Link>
 
-				<Menu.Item name="help" onClick={() => {}}>
-					Help
-				</Menu.Item>
+				<Link href={'/campaigns/new'}>
+					<Menu.Item name="add">+</Menu.Item>
+				</Link>
 			</Menu.Menu>
 		</Menu>
 	);

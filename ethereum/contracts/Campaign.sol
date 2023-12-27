@@ -74,4 +74,8 @@ contract Campaign {
 		request.receipient.transfer(request.amt);
 		request.completed = true;
 	}
+
+	function getSummary() public view returns (uint, uint, uint, uint, address) {
+		return (minAmt, address(this).balance, numRequests, totalContributors, manager);
+	}
 }
