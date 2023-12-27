@@ -14,7 +14,7 @@ const NewRequest = () => {
 	const [loading, setLoading] = useState<boolean>(false);
 
 	const router = useRouter();
-
+	const { address } = router.query;
 	async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
 		try {
 			e.preventDefault();
@@ -47,6 +47,7 @@ const NewRequest = () => {
 
 	return (
 		<div>
+			<Link href={`/campaigns/${address}`}>Back</Link>
 			<h2>Create new request</h2>
 			<Form onSubmit={onSubmit} error={!!err.length}>
 				<Form.Field>

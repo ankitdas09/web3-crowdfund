@@ -29,11 +29,13 @@ type CardGroupItem = {
 	meta?: string;
 	style?: any;
 };
-
 const CampaignShow = (props: Props) => {
 	const router = useRouter();
 	return (
 		<div>
+			<Link href={`/`} style={{ display: 'block', marginBottom: '12px' }}>
+				Back
+			</Link>
 			<Grid>
 				<Grid.Row>
 					<Grid.Column width={10}>

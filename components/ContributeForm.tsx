@@ -1,5 +1,8 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+import { Button, Checkbox, Form, Input, Message } from 'semantic-ui-react';
+import web3, { init } from '../ethereum/web3';
+import factory from '../ethereum/factory';
 
 export const ContributeForm = () => {
 	const [amt, setAmt] = useState<number>(null);
@@ -53,7 +56,7 @@ export const ContributeForm = () => {
 					/>
 				</Form.Field>
 				<Form.Field>
-					<Checkbox label="I agree to the Terms and Conditions" />
+					<Checkbox label="I am contributing to the correct campaign." />
 				</Form.Field>
 				<Message error header="Oops" content={err} />
 				<Button type="submit" loading={loading} primary disabled={loading}>

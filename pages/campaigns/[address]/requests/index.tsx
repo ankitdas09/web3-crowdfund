@@ -32,6 +32,7 @@ const ViewRequests = (props: Props) => {
 	const { address } = router.query;
 	return (
 		<div>
+			<Link href={`/campaigns/${address}`}>Back</Link>
 			<h2>Requests</h2>
 			<Link href={`/campaigns/${address}/requests/new`}>
 				<Button primary floated="right" style={{ marginBottom: '12px' }}>

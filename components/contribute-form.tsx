@@ -68,7 +68,7 @@ const ContributeForm = () => {
 				</Form.Field>
 				<Form.Field>
 					<Checkbox
-						label="I agree to the Terms and Conditions"
+						label="I am contributing to the correct campaign."
 						checked={tc}
 						onClick={() => setTC(!tc)}
 					/>
