@@ -9,7 +9,7 @@ How It Works
 - Create Campaigns: Users initiate campaigns with clear objectives and fundraising goals.
 - Contribute: Contributors support campaigns by donating Ethereum.
 - Spending Requests: Campaign owners can propose spending requests when funds are needed.
-- Voting System: Contributors vote on spending requests to collectively decide whether to approve or reject.
+- Voting System: Contributors vote on spending requests to collectively decide whether to approve or reject. Requests with more than 50 percent votes can be finalized by the owner.
 - Transparent Transactions: All transactions and decisions are recorded on the blockchain for accountability.
 
 ### Built With
@@ -47,6 +47,8 @@ Download and install the correct version of node. This project was developed on 
   ```sh
   ganache
   ```
+- Metamask
+  Connect your wallet to the local Ganache RPC server and import accounts into your wallet using the private keys provided by Ganache.
 
 ### Installation
 
