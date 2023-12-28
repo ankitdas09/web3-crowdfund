@@ -48,6 +48,7 @@ Download and install the correct version of node. This project was developed on 
   ganache
   ```
 - Metamask
+
   Connect your wallet to the local Ganache RPC server and import accounts into your wallet using the private keys provided by Ganache.
 
 ### Installation
