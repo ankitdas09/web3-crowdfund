@@ -63,7 +63,7 @@ const RequestRow = ({
 				</Button>
 			</Table.Cell>
 			<Table.Cell>
-				<Button color="blue" onClick={onFinalize} disabled={completed} basic>
+				<Button color="blue" onClick={onFinalize} disabled={completed || !readyToFinalize} basic>
 					Finalize
 				</Button>
 			</Table.Cell>

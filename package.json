@@ -3,7 +3,9 @@
 		"test": "mocha",
 		"dev": "next dev",
 		"start": "next start",
-		"build": "next build"
+		"build": "next build",
+		"compile": "node ethereum/compile.js",
+		"deploy": "node ethereum/deploy.js"
 	},
 	"dependencies": {
 		"fs-extra": "^11.2.0",

@@ -68,10 +68,34 @@ _Steps to setup the development environment_
 4. Compile the contracts
 
    ```sh
+   npm run compile
+   ```
+
+   or
+
+   ```sh
+   yarn compile
+   ```
+
+   or
+
+   ```sh
    node ethereum/compile.js
    ```
 
 5. Deploy the CampaignFactory contract
+
+   ```sh
+   npm run deploy
+   ```
+
+   or
+
+   ```sh
+   yarn deploy
+   ```
+
+   or
 
    ```sh
    node ethereum/deploy.js
@@ -101,6 +125,12 @@ yarn dev
 
 Project screenshots.
 
+[![Screen Shot][landing-screenshot]]()
+[![Screen Shot][newcampaign-screenshot]]()
+[![Screen Shot][product-screenshot]]()
+[![Screen Shot][requests-screenshot]]()
+[![Screen Shot][newrequest-screenshot]]()
+
 _For more information related to working of this project, please refer to the [Video](https://example.com)_
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
@@ -116,6 +146,10 @@ _For more information related to working of this project, please refer to the [V
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: screenshots/product.png
+[landing-screenshot]: screenshots/product.png
+[newcampaign-screenshot]: screenshots/product.png
+[requests-screenshot]: screenshots/product.png
+[newrequest-screenshot]: screenshots/product.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
